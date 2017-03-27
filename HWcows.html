@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>cowsHW</title>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.1.js"></script>
+    
+    <style>
+        .wraper {
+            width: 600px;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+
+        }
+        
+        .wraper img {
+
+           float: left;
+        }
+        .place {
+            background: url("Cow-Homework/5.jpg"); 
+            width: 280px;
+            float: left;
+            height: 150px;
+            position: relative;
+        }
+        .left{
+            position: absolute;
+            top: 50px;
+            left: 58px;
+        }
+        .right{
+            position: absolute;
+            top: 50px;
+            left: 185px;
+        }
+        
+    </style>
+<script>
+        $(document).ready(function () {
+            $(".place").hover(function(){
+                $(".left").animate({left:"85px"});
+                $(".right").animate({left:"158px"});
+            },function(){
+                $(".left").animate({left:"50px"});
+                $(".right").animate({left:"185px"});
+                
+            })
+           
+        }); //End ready
+    </script>
+    </head>
+
+<body>
+    <div class="wraper">
+        <div><img src="Cow-Homework/1.jpg"></div>
+        <div><img src="Cow-Homework/2.jpg"></div>
+        <div><img src="Cow-Homework/3.jpg"></div>
+        <div style="clear:both"></div>
+        <div><img src="Cow-Homework/4.jpg"></div>
+        <div class="place">
+            <div class="left"><img src="Cow-Homework/eshon.jpg"></div>
+            <div class="right"><img src="Cow-Homework/eshon.jpg"></div>
+        </div>
+        <div><img src="Cow-Homework/6.jpg"></div>
+        <div style="clear:both"></div>
+        <div><img src="Cow-Homework/7.jpg"></div>
+        <div><img src="Cow-Homework/8.jpg"></div>
+        <div><img src="Cow-Homework/9.jpg"></div>
+        <div style="clear:both"></div>
+        
+    </div>
+</body>
+
+</html>

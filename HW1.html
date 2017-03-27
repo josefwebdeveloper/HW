@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HwJwuery1</title>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        table td {
+            width: 70px;
+            height: 70px;
+            border: 2px solid blue;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("td:contains('24')").click(function () {
+                $(this).html("New");
+            })
+            $("table tr:eq(0) td:contains('3')").click(function () {
+                $(this).css("background-color", "green");
+            });
+            $("table tr:even").dblclick(function () {
+                $(this).children("td:last,td:first").css("color", "red");
+            })
+            var str1 = $("td:contains('30')");
+            $("td").dblclick(function () {
+                var str = $(this).html();
+                if (str <= 10) {
+                    $(str1).html(str).css("background-color", "blue");
+                }
+            })
+        }); //End ready
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+    </table>
+</body>
+
+</html>

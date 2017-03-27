@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>sandra</title>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            var speed;
+            var realTop;
+            var n = true;
+            $(".box").hover(function() {
+                realTop = $("img", this).css("top").replace("px", "") * 1;
+                speed = ((240 - realTop) / 240) * 1500;
+                $("img", this).stop().animate({
+                    top: "240px"
+                }, speed);
+            }, function() {
+                realTop = $("img", this).css("top").replace("px", "") * 1;
+                speed = realTop / 240 * 1500;
+                $("img", this).stop().animate({
+                    top: "0px"
+                }, speed);
+
+                if (realTop == 240 && n == true) {
+                    $("img", this).attr("src", "actors/leonardo.jpg");
+                    n = false;
+                } else {
+                    if (realTop == 240) {
+                        $("img", this).attr("src", "actors/sandra.jpg");
+                        n = true;
+                    }
+                }
+            });
+        }); //End ready
+
+    </script>
+    <style>
+        .box {
+            width: 200px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            border: 2px solid #000000;
+            background-color: #330000;
+            font-family: arial;
+            font-size: 18px;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .box img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div style="height:100px;"></div> Sandra Bullock
+        <br />An American Actress <img src="actors/sandra.jpg" id="pic" /> </div>
+</body>
+
+</html>
